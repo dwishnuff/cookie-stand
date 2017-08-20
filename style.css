@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css?family=Homemade+Apple');
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans');
+@import url('https://fonts.googleapis.com/css?family=Lato');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+h1{
+  font-family: "Homemade Apple", cursive;
+  color: #2b4356;
+}
+
+.color1{
+  color:#e88f63;
+}
+.head1{
+  font-family: "Fira Sans", arial, sans-serif;
+
+}
+
+.bodycopy{
+  font-family: "Lato", arial, sans-serif;
+  color: #4f7ea8;
+}
+
+.data{
+  font-family: "Montserrat", arial, sans-serif;
+  color:#405e77;
+}
+
+.theme1{
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 2em;
+  color: white;
+  padding: 10px;
+}
+
+.theme2{
+  background-color: #e88f63
+}
+
+.theme3{
+  background-color: #2b4356
+}
+
+.theme4{
+  background-color: #405e77
+
+}
+
+.theme5{
+    background-color: #4f7ea8
+}
