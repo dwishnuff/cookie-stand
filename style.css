@@ -1,8 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Homemade+Apple|Fira+Sans|Lato|Montserrat');
 
+body {
+  background-color: #efbfa7;
+}
+
 h1{
   font-family: "Homemade Apple", cursive;
   color: #2b4356;
+}
+
+h2{
+  font-family: "Fira Sans", arial, sans-serif;
+  color:#e88f63;
 }
 
 .color1{
@@ -18,7 +27,7 @@ h1{
   color: #4f7ea8;
 }
 
-.data{
+.data, tbody{
   font-family: "Montserrat", arial, sans-serif;
   color:#405e77;
 }
@@ -46,4 +55,9 @@ h1{
 
 .theme5{
     background-color: #4f7ea8
+}
+
+table th {
+  font-family:
+
 }
