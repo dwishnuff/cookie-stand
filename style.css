@@ -2,6 +2,10 @@
 
 body {
   background-color: #efbfa7;
+  background-image: url("salmon.png");
+  background-repeat: repeat-y;
+  background-position: right top;
+  background-attachment: scroll;
 }
 
 h1{
@@ -58,6 +62,15 @@ h2{
 }
 
 table th {
-  font-family:
+  font-family: "Fira Sans", arial, sans-serif;
+  text-transform: uppercase;
 
+}
+
+td {
+  text-align: center;
+}
+
+tr:hover {
+  background-color: #e88f63;
 }
