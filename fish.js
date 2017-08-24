@@ -1,8 +1,6 @@
 //create Constructor function
-var storeFront = function(location, headingId, tablebody, name, min, max, avg) {
+var storeFront = function(location, name, min, max, avg) {
   this.location = location;
-  this.headingId = headingId;
-  this.tablebody = tablebody;
   this.name = name;
   this.min = min;
   this.max = max;
@@ -11,12 +9,12 @@ var storeFront = function(location, headingId, tablebody, name, min, max, avg) {
 
 }
 //create array for constructor function
-var StoreInfo =[];
-var location1=  new storeFront("location1","locName1","location1","Pioneer Square","17","88","5.2");
-var location2= new storeFront("location2","locName2","location2","Portland Airport","6","24","1.2");
-var location3= new storeFront("location3","locName3","location3","Washington Square","11","38","1.9");
-var location4= new storeFront("location4","locName4","location4","Sellwood","20","48","3.3");
-var location5= new storeFront("location5","locName5","location5","Pearl District","3","24","2.6");
+
+var location1=  new storeFront("location1","Pioneer Square","17","88","5.2");
+var location2= new storeFront("location2","Portland Airport","6","24","1.2");
+var location3= new storeFront("location3","Washington Square","11","38","1.9");
+var location4= new storeFront("location4","Sellwood","20","48","3.3");
+var location5= new storeFront("location5","Pearl District","3","24","2.6");
 
 
 //generate random number
@@ -28,6 +26,7 @@ function randomNum (min,max){
 var  hours = ['10AM:', '11AM:', '12PM:', '1PM:', '2PM:', '3PM:', '4PM:', '5PM:'];
 
 var locations = [location1,location2,location3, location4, location5];
+// var locations = storeFront(this.location);
 
 function calcEstVolume (StoreInfo) {
   for (var indexHours = 0; indexHours<hours.length; indexHours++){
@@ -79,12 +78,22 @@ for (var locationIndex =0; locationIndex<locations.length; locationIndex++) {
   var h2Element = document.createElement("h2");
   h2Element.innerText= storeInfo.name;
   document.getElementById("writeTables").appendChild(h2Element);
+  var tableBody = document.createElement("tbody");
+  h2Element.appendChild(tableBody);
+  var row = document.createElement("tr");
+  tableBody.appendChild(row);
+  var timeTitle = document.createElement("th");
+  timeTitle.innerText = "TIME";
+  row.appendChild(timeTitle);
+  var avgTitle = document.createElement("th");
+  avgTitle.innerText = "AVG COOKIES SOLD";
+  row.appendChild(avgTitle);
 
-  // document.getElementById(storeInfo.headingId).innerText = storeInfo.name;
   calcEstVolume(storeInfo);
   calcTotSales(storeInfo);
   for (var timeIndex =0; timeIndex < hours.length; timeIndex++){
-    document.getElementById(storeInfo.tablebody).appendChild(locationInfoRow(timeIndex));
+    // document.getElementById("writeTables").appendChild(locationInfoRow(timeIndex));
+    tableBody.appendChild(locationInfoRow(timeIndex));
   }
-  document.getElementById(storeInfo.tablebody).appendChild(totSalesRow(storeInfo));
+  tableBody.appendChild(totSalesRow(storeInfo));
 }

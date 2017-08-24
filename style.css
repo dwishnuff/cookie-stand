@@ -31,7 +31,7 @@ h2{
   color: #4f7ea8;
 }
 
-.data, tbody{
+#writeTables, .data, tbody{
   font-family: "Montserrat", arial, sans-serif;
   color:#405e77;
 }
@@ -61,14 +61,18 @@ h2{
     background-color: #4f7ea8
 }
 
-table th {
+table, th {
   font-family: "Fira Sans", arial, sans-serif;
   text-transform: uppercase;
+  font-size: 75%;
 
 }
 
 td {
   text-align: center;
+  padding: 1px;
+  font-size: 75%;
+  font-weight: normal;
 }
 
 tr:hover {
