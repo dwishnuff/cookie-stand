@@ -1,16 +1,31 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<link rel = "stylesheet" type = "text/css" href = "style.css"/>
+  <link rel = "stylesheet" type = "text/css" href = "style.css"/>
+  <link rel = "stylesheet" type = "text/css" href = "form.css"/>
   <title>
     Pat's Fish Cookies
   </title>
 </head>
 <body>
   <h1> Pat's Salmon Cookies </h1>
+  <form>
+    <fieldset>
+      <legend>Add New Storefront</legend>
+      <label>Storefront Name:<br/>
+        <input type="text" name="name"/></label><br/>
+        <label>Minimum # of Customers per Hour:<br/>
+          <input type="number" name="min" /></label><br/>
+          <label>Maximum # of Customers per Hour:<br/>
+            <input type="number" name="max" /></label><br/>
+            <label>Average # of Cookies per Customer:</br>
+              <input type="number" name="avg" /></label><br/>
+              <br>
+              <input type="button" value="ADD" onclick="addStoreFront()">
+            </fieldset>
+          </form>
+          <div id = writeTables></div>
 
-<div id = writeTables></div>
-
-  <script type="text/javascript" src="fish.js"></script>
-</body>
-</html>
+          <script type="text/javascript" src="fish.js"></script>
+        </body>
+        </html>
