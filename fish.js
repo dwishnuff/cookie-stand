@@ -19,7 +19,10 @@ var location5= new storeFront("location5","Pearl District","3","24","2.6");
 
 //generate random number
 function randomNum (min,max){
-  return Math.floor(Math.random() * (max - min) + min);
+  console.log("min="+min);
+  console.log("max="+max);
+  console.log("random="+Math.floor((Math.random() * (max - min)) + min));
+  return Math.floor((Math.random() * (max - min)) + min);
 };
 
 //array for hours
@@ -27,6 +30,19 @@ var  hours = ['10AM:', '11AM:', '12PM:', '1PM:', '2PM:', '3PM:', '4PM:', '5PM:']
 
 var locations = [location1,location2,location3, location4, location5];
 // var locations = storeFront(this.location);
+
+//add storefront from Form
+function addStoreFront () {
+  var form = document.forms['newStoreFront'];
+  var newName= form.elements['name'];
+  var minCust= form.elements['min'];
+  var maxCust= form.elements['max'];
+  var avgCookies=form.elements['avg'];
+  var userAdded = new storeFront("userAdded",newName.value,minCust.value,maxCust.value,avgCookies.value);
+  locations.push(userAdded);
+  createTable();
+
+}
 
 function calcEstVolume (StoreInfo) {
   for (var indexHours = 0; indexHours<hours.length; indexHours++){
@@ -51,7 +67,7 @@ function totSalesRow (storeInfo){
 
 }
 //create row data for table
-function locationInfoRow (index) {
+function locationInfoRow (index, storeInfo) {
   var rowElement = document.createElement("tr");
   var hoursElement= document.createElement("td");
   hoursElement.innerText = hours[index];
@@ -73,6 +89,8 @@ function calcTotSales (storeInfo) {
 }
 
 //for loop for running calculations and creating table
+
+function createTable(){
 for (var locationIndex =0; locationIndex<locations.length; locationIndex++) {
   var storeInfo = locations[locationIndex];
   var h2Element = document.createElement("h2");
@@ -92,8 +110,10 @@ for (var locationIndex =0; locationIndex<locations.length; locationIndex++) {
   calcEstVolume(storeInfo);
   calcTotSales(storeInfo);
   for (var timeIndex =0; timeIndex < hours.length; timeIndex++){
-    // document.getElementById("writeTables").appendChild(locationInfoRow(timeIndex));
-    tableBody.appendChild(locationInfoRow(timeIndex));
+
+    tableBody.appendChild(locationInfoRow(timeIndex, storeInfo));
   }
   tableBody.appendChild(totSalesRow(storeInfo));
 }
+}
+createTable();

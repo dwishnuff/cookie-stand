@@ -5,6 +5,7 @@ body {
   background-image: url("salmon.png");
   background-repeat: repeat-y;
   background-position: right top;
+  background-size: 50%;
   background-attachment: scroll;
 }
 

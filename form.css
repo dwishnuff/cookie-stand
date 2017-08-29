@@ -2,8 +2,11 @@ fieldset{
   border-color: #e88f63;
   border-style: solid;
   background-color: rgba(244,176,141,0.5);
-  margin-left: 25%;
-  margin-right: 55%;
+  /*margin-left: 25%;
+  margin-right: 55%;*/
+width: 200px;
+  position: absolute;
+  left: 500px;
 }
 
 label, input[type=button]{
@@ -19,7 +22,9 @@ legend{
 
 input[type=button]{
 background-color: #e88f63;
-margin-right: 10%;
+/*margin-right: 10%;*/
+position: absolute;
+right: 5px;
 border-radius: 8px;
 border: none;
 font-size: 1em;
