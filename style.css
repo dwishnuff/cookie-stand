@@ -65,14 +65,14 @@ h2{
 table, th {
   font-family: "Fira Sans", arial, sans-serif;
   text-transform: uppercase;
-  font-size: 75%;
+  /*font-size: 75%;*/
 
 }
 
 td {
   text-align: center;
   padding: 1px;
-  font-size: 75%;
+  /*font-size: 75%;*/
   font-weight: normal;
 }
 

@@ -22,7 +22,9 @@ function randomNum (min,max){
   console.log("min="+min);
   console.log("max="+max);
   console.log("random="+Math.floor((Math.random() * (max - min)) + min));
-  return Math.floor((Math.random() * (max - min)) + min);
+  var randomNumber = Math.floor((Math.random() * (parseInt(max) - parseInt(min))) + parseInt(min));
+  // return Math.floor((Math.random() * (max - min)) + min);
+  return randomNumber;
 };
 
 //array for hours
@@ -39,14 +41,15 @@ function addStoreFront () {
   var maxCust= form.elements['max'];
   var avgCookies=form.elements['avg'];
   var userAdded = new storeFront("userAdded",newName.value,minCust.value,maxCust.value,avgCookies.value);
-  locations.push(userAdded);
+  locations.unshift(userAdded);
+
   createTable();
 
 }
 
 function calcEstVolume (StoreInfo) {
   for (var indexHours = 0; indexHours<hours.length; indexHours++){
-    StoreInfo.cookiesbyhour.push (Math.floor(randomNum(StoreInfo.min, StoreInfo.max) * StoreInfo.avg));
+    StoreInfo.cookiesbyhour.push (Math.floor(randomNum(StoreInfo.min, StoreInfo.max) * parseFloat(StoreInfo.avg)));
   }
 }
 //create total sales row for table
@@ -91,13 +94,16 @@ function calcTotSales (storeInfo) {
 //for loop for running calculations and creating table
 
 function createTable(){
+  document.getElementById("writeTables").innerHTML="";
 for (var locationIndex =0; locationIndex<locations.length; locationIndex++) {
   var storeInfo = locations[locationIndex];
   var h2Element = document.createElement("h2");
   h2Element.innerText= storeInfo.name;
   document.getElementById("writeTables").appendChild(h2Element);
+  var createTable =document.createElement("table");
+  document.getElementById("writeTables").appendChild(createTable);
   var tableBody = document.createElement("tbody");
-  h2Element.appendChild(tableBody);
+  createTable.appendChild(tableBody);
   var row = document.createElement("tr");
   tableBody.appendChild(row);
   var timeTitle = document.createElement("th");
