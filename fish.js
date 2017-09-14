@@ -19,9 +19,6 @@ var location5= new storeFront("location5","Pearl District","3","24","2.6");
 
 //generate random number
 function randomNum (min,max){
-  console.log("min="+min);
-  console.log("max="+max);
-  console.log("random="+Math.floor((Math.random() * (max - min)) + min));
   var randomNumber = Math.floor((Math.random() * (parseInt(max) - parseInt(min))) + parseInt(min));
   // return Math.floor((Math.random() * (max - min)) + min);
   return randomNumber;
@@ -115,6 +112,7 @@ for (var locationIndex =0; locationIndex<locations.length; locationIndex++) {
 
   calcEstVolume(storeInfo);
   calcTotSales(storeInfo);
+  console.log(calcTotSales(storeInfo));
   for (var timeIndex =0; timeIndex < hours.length; timeIndex++){
 
     tableBody.appendChild(locationInfoRow(timeIndex, storeInfo));
